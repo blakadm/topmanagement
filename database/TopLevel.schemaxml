@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_general_ci">toplevel</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="tbl_classification" view="colnames">
+<left>787</left>
+<top>207</top>
+<width>150</width>
+<height>116</height>
+<sql_create_table>CREATE TABLE `tbl_classification` (
+  `ClassificationID` int(11) NOT NULL AUTO_INCREMENT,
+  `Classification` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Description` varchar(200) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`ClassificationID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_equipment" view="colnames">
+<left>592</left>
+<top>32</top>
+<width>160</width>
+<height>290</height>
+<sql_create_table>CREATE TABLE `tbl_equipment` (
+  `EquipmentID` int(11) NOT NULL AUTO_INCREMENT,
+  `RSTLID` int(11) NOT NULL,
+  `OrigEquipmentID` int(11) NOT NULL,
+  `EquipmentCode` varchar(50) NOT NULL,
+  `EquipmentName` varchar(100) NOT NULL,
+  `LabID` int(11) NOT NULL,
+  `ClassificationID` int(11) NOT NULL,
+  `Model` varchar(150) DEFAULT NULL,
+  `SerialNum` varchar(200) DEFAULT NULL,
+  `Amount` double(8,2) NOT NULL DEFAULT '0.00',
+  `EquipmentStatusID` int(11) NOT NULL DEFAULT '0',
+  `FundingID` int(11) NOT NULL,
+  PRIMARY KEY (`EquipmentID`),
+  UNIQUE KEY `RSTLID` (`RSTLID`,`OrigEquipmentID`),
+  KEY `LabID` (`LabID`),
+  KEY `FundingID` (`FundingID`),
+  KEY `EquipmentStatusID` (`EquipmentStatusID`),
+  KEY `ClassificationID` (`ClassificationID`),
+  CONSTRAINT `tbl_equipment_ibfk_1` FOREIGN KEY (`LabID`) REFERENCES `tbl_lab` (`LabID`),
+  CONSTRAINT `tbl_equipment_ibfk_2` FOREIGN KEY (`FundingID`) REFERENCES `tbl_fundings` (`FundingID`),
+  CONSTRAINT `tbl_equipment_ibfk_3` FOREIGN KEY (`EquipmentStatusID`) REFERENCES `tbl_equipmentstatus` (`EquipmentStatusID`),
+  CONSTRAINT `tbl_equipment_ibfk_4` FOREIGN KEY (`ClassificationID`) REFERENCES `tbl_classification` (`ClassificationID`)
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_equipmentstatus" view="colnames">
+<left>400</left>
+<top>34</top>
+<width>150</width>
+<height>132</height>
+<sql_create_table>CREATE TABLE `tbl_equipmentstatus` (
+  `EquipmentStatusID` int(11) NOT NULL AUTO_INCREMENT,
+  `EquipmentStatus` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `Description` varchar(255) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`EquipmentStatusID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_fundings" view="colnames">
+<left>400</left>
+<top>182</top>
+<width>152</width>
+<height>144</height>
+<sql_create_table>CREATE TABLE `tbl_fundings` (
+  `FundingID` int(11) NOT NULL AUTO_INCREMENT,
+  `FundingName` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `FundingCode` varchar(150) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`FundingID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_lab" view="colnames">
+<left>788</left>
+<top>32</top>
+<width>148</width>
+<height>165</height>
+<sql_create_table>CREATE TABLE `tbl_lab` (
+  `LabID` int(11) NOT NULL AUTO_INCREMENT,
+  `LabName` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `LabCode` varchar(10) CHARACTER SET latin1 NOT NULL,
+  `LabCount` int(11) NOT NULL,
+  `NextRequestCode` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `Status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`LabID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_stocks" view="colnames">
+<left>18</left>
+<top>32</top>
+<width>169</width>
+<height>290</height>
+<sql_create_table>CREATE TABLE `tbl_stocks` (
+  `StockID` int(11) NOT NULL AUTO_INCREMENT,
+  `RSTLID` int(11) NOT NULL,
+  `OrigStockID` int(11) NOT NULL,
+  `StockCode` varchar(50) NOT NULL,
+  `SupplyID` int(11) NOT NULL,
+  `BrandName` varchar(255) NOT NULL,
+  `QuantityOnHand` int(11) NOT NULL,
+  `QuantityUsed` int(11) NOT NULL DEFAULT '0',
+  `Amount` double(8,2) NOT NULL DEFAULT '0.00',
+  `LatestDateConsumed` date NOT NULL,
+  PRIMARY KEY (`StockID`),
+  UNIQUE KEY `RSTLID` (`RSTLID`,`OrigStockID`),
+  KEY `SupplyID` (`SupplyID`),
+  CONSTRAINT `tbl_stocks_ibfk_1` FOREIGN KEY (`SupplyID`) REFERENCES `tbl_supplies` (`SupplyID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_supplies" view="colnames">
+<left>218</left>
+<top>34</top>
+<width>150</width>
+<height>132</height>
+<sql_create_table>CREATE TABLE `tbl_supplies` (
+  `SupplyID` int(11) NOT NULL AUTO_INCREMENT,
+  `SupplyName` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `LabID` int(11) NOT NULL,
+  `Description` varchar(255) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`SupplyID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_request" view="colnames">
+<left>20</left>
+<top>338</top>
+<width>168</width>
+<height>410</height>
+<sql_create_table>CREATE TABLE `tbl_request` (
+  `RequestID` int(11) NOT NULL AUTO_INCREMENT,
+  `OrigRequestID` int(11) DEFAULT NULL,
+  `RSTLID` int(11) NOT NULL,
+  `LabID` int(11) NOT NULL,
+  `RequestRefNumber` varchar(50) NOT NULL,
+  `RequestDateTime` datetime NOT NULL,
+  `CustomerCode` varchar(11) NOT NULL,
+  `PaymentTypeID` int(11) NOT NULL,
+  `ModeOfReleaseID` int(11) NOT NULL,
+  `DiscountID` int(11) NOT NULL DEFAULT '0',
+  `PurposeID` int(11) NOT NULL,
+  `Total` double(11,2) NOT NULL DEFAULT '0.00',
+  `CreateTime` datetime NOT NULL,
+  PRIMARY KEY (`RequestID`),
+  UNIQUE KEY `RequestRefNumber` (`RequestRefNumber`),
+  UNIQUE KEY `OrigRequestID` (`OrigRequestID`,`RSTLID`),
+  KEY `PurposeID` (`PurposeID`),
+  KEY `DiscountID` (`DiscountID`),
+  KEY `LabID` (`LabID`),
+  KEY `PaymentTypeID` (`PaymentTypeID`),
+  KEY `ModeOfReleaseID` (`ModeOfReleaseID`),
+  CONSTRAINT `tbl_request_ibfk_1` FOREIGN KEY (`PurposeID`) REFERENCES `tbl_purpose` (`PurposeID`),
+  CONSTRAINT `tbl_request_ibfk_2` FOREIGN KEY (`DiscountID`) REFERENCES `tbl_discount` (`DiscountID`),
+  CONSTRAINT `tbl_request_ibfk_3` FOREIGN KEY (`LabID`) REFERENCES `tbl_lab` (`LabID`),
+  CONSTRAINT `tbl_request_ibfk_4` FOREIGN KEY (`PaymentTypeID`) REFERENCES `tbl_paymenttype` (`PaymentTypeID`),
+  CONSTRAINT `tbl_request_ibfk_5` FOREIGN KEY (`ModeOfReleaseID`) REFERENCES `tbl_modeofrelease` (`ModeOfReleaseID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_samples" view="colnames">
+<left>400</left>
+<top>344</top>
+<width>152</width>
+<height>247</height>
+<sql_create_table>CREATE TABLE `tbl_samples` (
+  `SampleID` int(11) NOT NULL AUTO_INCREMENT,
+  `OrigSampleID` int(11) NOT NULL,
+  `RSTLID` int(11) NOT NULL,
+  `RequestID` int(11) NOT NULL,
+  `SampleTypeID` int(11) NOT NULL,
+  `SampleName` varchar(50) NOT NULL,
+  `Description` text,
+  `SampleMonth` int(11) NOT NULL,
+  `SampleYear` int(11) NOT NULL,
+  `Cancelled` tinyint(1) NOT NULL DEFAULT '0',
+  `Completed` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`SampleID`),
+  KEY `RequestID` (`RequestID`),
+  KEY `SampleTypeID` (`SampleTypeID`),
+  CONSTRAINT `tbl_samples_ibfk_1` FOREIGN KEY (`RequestID`) REFERENCES `tbl_request` (`RequestID`),
+  CONSTRAINT `tbl_samples_ibfk_2` FOREIGN KEY (`SampleTypeID`) REFERENCES `tbl_sampletype` (`SampleTypeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_analysis" view="colnames">
+<left>592</left>
+<top>344</top>
+<width>160</width>
+<height>404</height>
+<sql_create_table>CREATE TABLE `tbl_analysis` (
+  `AnalysisID` int(11) NOT NULL AUTO_INCREMENT,
+  `OrigAnalysisID` int(11) NOT NULL,
+  `RSTLID` int(11) NOT NULL,
+  `PSTCAnalysis_id` int(11) NOT NULL,
+  `RequestID` int(11) DEFAULT NULL,
+  `SampleID` int(11) NOT NULL,
+  `SampleCode` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `TestName` varchar(200) CHARACTER SET latin1 NOT NULL,
+  `Method` varchar(150) CHARACTER SET latin1 NOT NULL,
+  `References` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Fee` float NOT NULL,
+  `TestId` int(11) NOT NULL,
+  `AnalysisMonth` int(11) NOT NULL,
+  `AnalysisYear` int(11) NOT NULL,
+  `Package` int(11) NOT NULL,
+  `Cancelled` tinyint(1) NOT NULL,
+  `Deleted` tinyint(1) NOT NULL,
+  `TaggingId` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`AnalysisID`),
+  KEY `SampleID` (`SampleID`),
+  CONSTRAINT `tbl_analysis_ibfk_1` FOREIGN KEY (`SampleID`) REFERENCES `tbl_samples` (`SampleID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_sampletype" view="colnames">
+<left>218</left>
+<top>340</top>
+<width>150</width>
+<height>122</height>
+<sql_create_table>CREATE TABLE `tbl_sampletype` (
+  `SampleTypeID` int(11) NOT NULL AUTO_INCREMENT,
+  `SampleType` varchar(75) CHARACTER SET latin1 NOT NULL,
+  `TestCategoryId` int(11) NOT NULL,
+  PRIMARY KEY (`SampleTypeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_purpose" view="colnames">
+<left>215</left>
+<top>589</top>
+<width>152</width>
+<height>157</height>
+<sql_create_table>CREATE TABLE `tbl_purpose` (
+  `PurposeID` int(11) NOT NULL AUTO_INCREMENT,
+  `Purpose` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `Status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`PurposeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_discount" view="colnames">
+<left>400</left>
+<top>599</top>
+<width>148</width>
+<height>149</height>
+<sql_create_table>CREATE TABLE `tbl_discount` (
+  `DiscountID` int(11) NOT NULL AUTO_INCREMENT,
+  `DiscountType` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `Rate` float(11,2) NOT NULL,
+  `Status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`DiscountID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_paymenttype" view="colnames">
+<left>216</left>
+<top>472</top>
+<width>150</width>
+<height>108</height>
+<sql_create_table>CREATE TABLE `tbl_paymenttype` (
+  `PaymentTypeID` int(11) NOT NULL AUTO_INCREMENT,
+  `PaymentType` varchar(25) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`PaymentTypeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_postinglogs" view="colnames">
+<left>787</left>
+<top>343</top>
+<width>150</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `tbl_postinglogs` (
+  `PostingLogID` int(11) NOT NULL AUTO_INCREMENT,
+  `RSTLID` int(11) NOT NULL,
+  `DatePosted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `PostDescription` text,
+  PRIMARY KEY (`PostingLogID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="tbl_modeofrelease" view="colnames">
+<left>218</left>
+<top>180</top>
+<width>150</width>
+<height>144</height>
+<sql_create_table>CREATE TABLE `tbl_modeofrelease` (
+  `ModeOfReleaseID` int(11) NOT NULL,
+  `Mode` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `Status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`ModeOfReleaseID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
