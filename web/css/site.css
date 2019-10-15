@@ -1,0 +1,308 @@
+link-display/*
+    Created on : 10 24, 17, 4:50:23 PM
+    Author     : OneLab
+    Developer  : Eng'r Nolan F. Sunico
+*/
+
+html,
+body {
+    height: 100%;
+}
+.fb_iframe_widget span {
+    align: inherit !important;
+}
+.contact-details{
+    margin-left: 10px
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff!important;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #005983!important; /*#005f9b */
+}
+.navbar-toggle {
+    margin-top: 8px!important;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+   color: #fff;
+   background-color: #005983;
+}
+.image-details{
+   left: 30px;
+   float: left;
+   clear: left
+}
+.image-details-down{
+   float: left;
+   clear: left
+}
+.my-auto{
+    padding-left: 30px;
+    margin-top: 30px
+}
+/*.navbar-inverse .navbar-toggle:focus {
+    background-color: #005983;
+    margin-top: 8px!important;
+}*/
+.cbx-md {
+    width: 16px;
+    height: 16px;
+    font-size: 15px;
+}
+.no-bullet{
+  list-style-type: none!important;
+}
+.post-content{
+    border:1px solid black;
+}
+.more-data{
+    display: none
+}
+.box-blue{
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);    
+    border-top-color: #3c8dbc;
+    height: 100%
+}
+.table-hover tbody tr:hover>td {
+    cursor: pointer;
+}
+.span-display{
+    display: inline-block
+}
+.span-display>label{
+    width: 80px;
+    text-align: center;
+    font-size: 12px
+}
+.link-display{
+    display: block;
+    position: relative;
+   /* text-decoration: none; */
+    color: black!important
+}
+.content-items {
+    padding: 0 0 0 0!important;
+}
+.glyphicon{
+   top: -4px!important 
+}
+.customer-logo {
+    margin-right: 10px;
+    width: 80px;
+    margin-top: 10px   
+}
+
+.customer-logo:hover {
+    border: 2px solid #033EFF;
+}
+
+.content-font {
+    font-size: 14px;
+    margin-left: 10px
+}
+
+.rounded-corner {
+    border-radius: 10px;
+    border: 5px solid white;
+}
+
+.rounded-corner:hover {
+    filter: brightness(150%);
+    cursor: pointer
+}
+
+header .navbar {
+    background-color: #066da9!important;
+}
+
+.div-hr {
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.rounded {
+    border-radius: 5px;
+    border: 2px solid lightgray;
+}
+
+.note-icon {
+    background-position: 0 0;
+}
+
+.hr-line {
+    padding-bottom: 20px;
+}
+
+.content-button {
+    position: relative;
+    top: 5px;
+    margin-bottom: 45px
+}
+
+.button-left-corner {
+    float: left;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.button-right-corner {
+    float: right;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.onelab-content {
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    min-height: 300px;
+    max-height: 540px;
+    overflow: auto;
+    position: relative;
+}
+
+.note-box {
+    color: #144261;
+    background: #d5e9f6;
+    margin-left: 10px;
+    min-height: 200px;
+}
+
+.info-tab {
+    width: 36px;
+    height: 50px;
+    float: left;
+    margin-left: -21px;
+    position: relative;
+    top: 2px;
+    background: url(sprite.png) no-repeat;
+}
+
+.shadow {
+    background: #F7F8F9;
+    padding: 3px;
+    margin: 10px 0;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap>.container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+
+/* add sorting icons to gridview sort links */
+
+a.asc:after,
+a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/
+    "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/
+    "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+
+/* align the logout "link" (button in form) of the navbar */
+
+.nav li>form>button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li>form>button.logout {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav>li>form>button.logout:focus,
+.nav>li>form>button.logout:hover {
+    text-decoration: none;
+}
+
+.nav>li>form>button.logout:focus {
+    outline: none;
+}
