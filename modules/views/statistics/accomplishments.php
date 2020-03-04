@@ -15,6 +15,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Top Management', 'url' => ['/tople
 $this->params['breadcrumbs'][] = ['label' => 'Statistics Dashboard', 'url' => ['/toplevel/statistics/dashboard']];
 $this->params['breadcrumbs'][] = 'Accomplishment - RSTL'; // $this->title;
 
+$this->title = 'Accomplishment - RSTL';
+
 //var_dump($dataBar);
 
 //var_dump(Yii::$app->user->identity->ismanagement)
@@ -139,7 +141,7 @@ $this->params['breadcrumbs'][] = 'Accomplishment - RSTL'; // $this->title;
                                 
                             </div>
 
-<div class="row">
+<div class="row" style="padding-top:10px">
     <div class="col-md-12">
         
         

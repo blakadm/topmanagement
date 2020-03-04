@@ -10,12 +10,13 @@ use yii\helpers\Url;
  * 01 30, 19 , 1:21:40 PM * 
  * Module: topdata * 
  */
-$this->title = 'Samples';
+$this->title = 'Ranking ( RDIs )';
 $this->params['breadcrumbs'][] = ['label' => 'Top Management', 'url' => ['/toplevel']];
 $this->params['breadcrumbs'][] = ['label' => 'Statistics Dashboard', 'url' => ['/toplevel/statistics/dashboard']];
-$this->params['breadcrumbs'][] = 'Ranking ( RDI )'; // $this->title;
+$this->params['breadcrumbs'][] = 'Ranking ( RDIs )'; // $this->title;
+
 ?>
-<div class="row">
+<div class="row" style="padding-top:10px">
     <div class="col-md-1" style="text-align:center;vertical-align: middle;font-weight: bold;margin-top: 5px"> Select Year : </div>
     <div class="col-md-11" style="width: 200px;margin-left:-30px">
        <?php

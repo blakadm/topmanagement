@@ -1506,11 +1506,13 @@ class StatisticsController extends \yii\web\Controller
        $currentType = $pResultType;
        
        $currentType = 'Samples';
+       
        //echo $pID;
        //exit;
        $now = new DateTime();
        $currentyear= $now->format('Y');
        $mainArray=array();
+       $currentyear = 2019;
        $mainArray = $this->GenerateSamplesData($currentyear, 'Samples',false);
             
        $dataTables = $mainArray['dataTables'];
@@ -1868,7 +1870,7 @@ class StatisticsController extends \yii\web\Controller
        $now = new DateTime();
        $currentyear= $now->format('Y');
        $currentRDI = 'ITDI';
-       
+       $currentyear = 2019;
        $mainArray = $this->GenerateRDIData($currentyear,'samples',$currentRDI);
        $selectedYear = $currentyear;
         $listYear = $mainArray['listYear'];
@@ -2571,7 +2573,7 @@ class StatisticsController extends \yii\web\Controller
        $currentyear= $now->format('Y');
        $yearIndex =0;
        $index=0;
-       
+        $currentyear=2019;
        $yearmode='';
 		
 	foreach ($arrayYear as $colYear)
@@ -2952,7 +2954,7 @@ class StatisticsController extends \yii\web\Controller
         $linecate = Array();
         
         $linecate = ['2016','2017','2018','2019'];
-        
+        $strCluster = 'RSTL';
         switch($pCluster)
         {
             case 'North Luzon':
@@ -2969,6 +2971,7 @@ class StatisticsController extends \yii\web\Controller
                 break;
              case 'RDI':
                  $strClusterMode='clusterlinerdi' . $strYearMode;
+                 $strCluster = 'RDI';
                 break;
              
         }
@@ -2991,14 +2994,40 @@ class StatisticsController extends \yii\web\Controller
                  
           if (Yii::$app->request->isAjax)
               {
-                return $this->renderAjax('_subclusterline',['dataLineArray'=>$dataLineArray,'curIndicator'=>$pIndicator,'pCluster'=>$pCluster,'yearmode'=>$strYearMode]);
+                return $this->renderAjax('_subclusterline',['dataLineArray'=>$dataLineArray,'curIndicator'=>$pIndicator,'pCluster'=>$pCluster,'yearmode'=>$strYearMode,'strCluster'=>$strCluster]);
               }
 
               else
               {
-                    return $this->render('_subclusterline',['dataLineArray'=>$dataLineArray,'curIndicator'=>$pIndicator,'pCluster'=>$pCluster,'yearmode'=>$strYearMode]);
+                    return $this->render('_subclusterline',['dataLineArray'=>$dataLineArray,'curIndicator'=>$pIndicator,'pCluster'=>$pCluster,'yearmode'=>$strYearMode,'strCluster'=>$strCluster]);
               } 
       }
-    
-    
+      
+      public function actionIndustry()
+      {
+          
+           $listCluster=array("South Luzon","North Luzon","Visayas","Mindanao"); 
+            $dataTreeArray = array();
+            
+            
+                     $arrayRec=array();
+                      $arrayRec['id']=  '';
+                      $arrayRec['name']= '';
+                      $arrayRec['color']='';
+                     array_push($dataTreeArray,$arrayRec);
+            
+           
+           
+      if (Yii::$app->request->isAjax)
+              {
+                return $this->renderAjax('industry2');
+              }
+
+              else
+              {
+                    return $this->render('industry2');
+              }
+      }
+
+      
 }

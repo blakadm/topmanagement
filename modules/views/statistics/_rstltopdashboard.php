@@ -111,7 +111,7 @@
 
 
 </style>
-<img src="/images/performancenew.png" alt="" style="width: 500px;height:35px;padding-top: 0px;display: block;
+<img  src="/images/dashboardbanner.png" alt="" style="width: 550px;height:40px;padding-top: 0px;display: block;
      margin-left: auto;
      margin-right: auto;
      "> 

@@ -2,6 +2,7 @@
 
 namespace mdm\admin\controllers;
 
+use app\models\Logintrail;
 use Yii;
 use mdm\admin\models\form\Login;
 use mdm\admin\models\form\PasswordResetRequest;
@@ -19,6 +20,7 @@ use yii\web\NotFoundHttpException;
 use yii\base\UserException;
 use yii\mail\BaseMailer;
 use mdm\admin\components\Helper;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
 
 /**
  * User controller
@@ -132,12 +134,28 @@ class UserController extends Controller
      */
     public function actionLogin()
     {
+        
         if (!Yii::$app->getUser()->isGuest) {
             return $this->goHome();
         }
         $model = new Login();
         if ($model->load(Yii::$app->getRequest()->post()) && $model->login()) {
-            return $this->goBack();
+           
+            $trail = new Logintrail();
+            $trail->username =$model->username;
+            $trail->logindate = date("Y-m-d H:i:s");
+            $trail->save();
+
+           // return $this->goBack();
+            if($model->username=='newsuser')
+                {
+                    return $this->redirect('http://topmanagement.onelab.local/articles');
+                    //return $this->goHome();
+                }
+                else
+                {
+                    return $this->goBack();
+                }
         } else {
             return $this->render('login', [
                     'model' => $model,

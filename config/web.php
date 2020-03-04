@@ -125,9 +125,10 @@ $config = [
             // Select URL To Upload Item Thumb
             'itemThumbURL' => '@web/img/articles/items/thumb/',
             // Select Path To Upload Attachments
-            'attachPath' => '@webroot/attachments/',
+            'attachPath' => '@webroot/img/articles/items/',
+           
             // Select URL To Upload Attachment
-            'attachURL' => '@web/img/articles/items/',
+            'attachURL' => '/img/articles/items/',
             // Select Image Types allowed
             'attachType' => ['jpg', 'jpeg', 'gif', 'png', 'csv', 'pdf', 'txt', 'doc', 'docx', 'xls', 'xlsx'],
             // Select Image Name: categoryname, original, casual

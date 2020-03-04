@@ -71,11 +71,11 @@ use yii\helpers\Url;
             case 'RDI':
                 if($yearmode == 'year')
                 {
-                    echo $this->render('_clusterline6year',['dataLineArray'=>$dataLineArray,'curIndicator' => $curIndicator]);
+                    echo $this->render('_clusterline6year',['dataLineArray'=>$dataLineArray,'curIndicator' => $curIndicator,'strCluster'=>$strCluster]);
                 }
                 else
                 {
-                     echo $this->render('_clusterline6',['dataLineArray'=>$dataLineArray,'curIndicator' => $curIndicator]);
+                     echo $this->render('_clusterline6',['dataLineArray'=>$dataLineArray,'curIndicator' => $curIndicator,'strCluster'=>$strCluster]);
                 }
                
                 break;

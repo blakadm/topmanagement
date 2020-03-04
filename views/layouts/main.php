@@ -42,13 +42,17 @@ if (Yii::$app->controller->action->id === 'login') {
         <?php $this->head() ?>
     </head>
     <body class="hold-transition skin-blue sidebar-collapse">
-    <section id="navigation-main"> 
        <!-- Require the navigation -->
+    
+    <section id="navigation-main"> 
+    
        <?= $this->render(
             'header.php',
             ['directoryAsset' => $directoryAsset]
         ) ?>
-    </section><!-- /#navigation-main -->
+    </section>
+        
+        <!-- /#navigation-main -->
     <?php $this->beginBody() ?>
     <div class="wrap">
         <?= $this->render(
@@ -59,11 +63,18 @@ if (Yii::$app->controller->action->id === 'login') {
     </div>
 
     <?php $this->endBody() ?>
+    
+  
+    <section id="navigation-footer"> 
+    
+       <?= $this->render(
+            'footer.php',
+            ['directoryAsset' => $directoryAsset]
+        ) ?>
+    </section>    
+     
     </body>
-    <!-- Application developed by: Eng'r Nolan F. Sunico
-         Agency: DOST-IX 
-         Date: October 1, 2017
-    -->
+   
     </html>
     <?php $this->endPage() ?>
 <?php } ?>

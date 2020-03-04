@@ -61,8 +61,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('indexfinal');
     }
+     public function actionIndexfinal()
+    {
+        return $this->render('indexfinal');
+    }
+
+    public function actionInstructions()
+    {
+        return $this->render('instructions');
+    }
+
+
     public function actionPolicy(){
         return $this->render('policy');
     }
@@ -121,4 +132,10 @@ class SiteController extends Controller
     public function actionTestchart(){
         return $this->render('chart');
     }
+
+   
+    
+    
+    
+    
 }

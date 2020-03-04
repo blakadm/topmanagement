@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                  <?= $form->field($model, 'type')->dropDownList(
 			['Top' => 'Top Management','DOST-I' => 'DOST-I', 'DOST-II' => 'DOST-II','DOST-III' => 'DOST-III','DOST-CALABARZON' => 'DOST-CALABARZON','DOST-MIMAROPA' => 'DOST-MIMAROPA','DOST-V' => 'DOST-V'
                          ,'DOST-VI' => 'DOST-VI','DOST-VII' => 'DOST-VII','DOST-VIII' => 'DOST-VIII','DOST-IX' => 'DOST-IX','DOST-X' => 'DOST-X','DOST-XI' => 'DOST-XI','DOST-XII' => 'DOST-XII'
-                         ,'DOST-CAR' => 'DOST-CAR','DOST-CARAGA' => 'DOST-CARAG','DOST-ARMM' => 'DOST-ARMM',
+                         ,'DOST-CAR' => 'DOST-CAR','DOST-CARAGA' => 'DOST-CARAGA','MOST-ARMM' => 'MOST-ARMM',
                             'ITDI' => 'ITDI','FPRDI' => 'FPRDI','FNRI' => 'FNRI','MIRDC' => 'MIRDC','PNRI' => 'PNRI','PTRI' => 'PTRI']
 			); ?>
             </div>

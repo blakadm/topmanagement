@@ -38,7 +38,7 @@ use kartik\helpers\Html;
                             ],
                             'title' => [
                                 'useHTML' => true,
-                                'text' => '<div style="text-align:center;">' . 'Number of  ' . '<br/><div class="changeColorTitle">' . $curIndicator . ' per RSTL  </div></div>',
+                                'text' => '<div style="text-align:center;">' . 'Number of  ' . '<br/><div class="changeColorTitle">' . $curIndicator . ' per ' . $strCluster .  '</div></div>',
                             ],
                             'xAxis' => [
                                 //   'categories'=>$listRstl,

@@ -12,6 +12,7 @@ use kartik\helpers\Html;
 $this->params['breadcrumbs'][] = ['label' => 'Top Management', 'url' => ['/toplevel']];
 $this->params['breadcrumbs'][] = ['label' => 'Statistics Dashboard', 'url' => ['/toplevel/statistics/dashboard']];
 $this->params['breadcrumbs'][] = 'Accomplishment - RDIs'; // $this->title;
+$this->title = 'Accomplishment - RDIs';
 
 
 ?>
@@ -102,7 +103,7 @@ $this->params['breadcrumbs'][] = 'Accomplishment - RDIs'; // $this->title;
 
 
 
-<div class="row">
+<div class="row" style="padding-top:10px">
     <div class="col-md-12">
         <div class="tab" role="tabpanel">
 

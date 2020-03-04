@@ -43,6 +43,19 @@ $this->registerCssFile($url.'/main.css');
         font-size: 40px;
         text-align: center;
     }
+    .newtextsmall {
+       
+       background: -webkit-linear-gradient( #1b4f72  , #3c8dbc);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       font: normal 52px/1 "Audiowide", Helvetica, sans-serif;
+       -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+       font-family: 'Audiowide';
+       font-size: 30px;
+       text-align: center;
+       padding-top: -10px
+   }
     .img-responsive {
         display: block;
         max-width: 100%;
@@ -64,13 +77,21 @@ $this->registerCssFile($url.'/main.css');
                         <div class="d-flex align-items-center" >
                             <div class="row" style="margin-top: 10%">
                                 <div class="col-sm-12 col-md-offset-0 ">
-                                    <img src="/images/onelablogonew.png" style="width: 80%;border-radius: 15px 15px;display: block; height: auto; max-width: 100%;margin:0 auto;margin-top: 30px">
+                                    <img src="/images/onelablogo.png" style="width: 80%;border-radius: 15px 15px;display: block; height: auto; max-width: 100%;margin:0 auto;margin-top: 30px">
                                 </div>
                                 <div class="col-sm-12 col-md-offset-0 ">
-
-                                    <h1 class="newtext">
-                                        Top Management
-                                    </h1>
+                                    <div class="row"> 
+                                        <h1 class="newtext">
+                                            Performance Dashboard
+                                        </h1>  
+                                    </div>
+                                    
+                                    <div class="row">  
+                                        <h1 class="newtextsmall">
+                                            for Top Management
+                                        </h1>  
+                                    </div>
+                                    <br>
                                   
                                     <p style="font-family: 'Audiowide';font-size:18px;color:#1b4f72;text-align:center;vertical-align: central">
                                         Department of Science and Technology

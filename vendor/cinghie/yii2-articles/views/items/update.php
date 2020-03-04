@@ -8,7 +8,7 @@ use kartik\helpers\Html;
 
 // Set Title and Breadcrumbs
 $this->title = Yii::t('articles', '') . $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('articles', 'Articles'), 'url' => ['/articles/default/index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('articles', 'Articles'), 'url' => ['/articles/items/index']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('articles', 'Item'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $model->alias;
 

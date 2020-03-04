@@ -4,44 +4,55 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Services';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->title = 'Services';
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-about">
-    <div class="content-items">
-        <div class="note-box rounded" style=''>
-            <div title="Important Notes" class="info-tab note-icon">&nbsp;</div>
-            <h3>Services</h3>
-            <div id="content-button">
-                <a data-toggle="tooltip" title="Back" href='/' class="btn btn-primary button-left-corner"><i class="fa fa-arrow-circle-left"></i></a>
-                <a data-toggle="tooltip" title="Services" href='https://customer.onelab.ph/#/services' class="btn btn-primary button-right-corner"><i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-            <hr class="hr-line">
-            <div class="onelab-content">
-                <p style="text-align: justify;font-size: 18px">
-                    The <strong>OneLab Services </strong> provides tool to users to perform search on availability of services across 
-                    the nation serving at least 17 regional testing laboratories.
-                </p>
-                <p style="text-align: justify">
-                <h3 class="breadcrumb">Users can perform search services for the following:</h3>
-                <ol class="list-group col-sm-4">
-                    <li class="list-group-item"><strong>Sample Test.</strong></li>
-                    <li class="list-group-item"><strong>RSTL that offers such Test:</strong></li>
-                    <ul class="list-group col-md-8" style="margin-left: 15px">
-                        <li class="list-group-item">Microbiology Laboratory</li>
-                        <li class="list-group-item">Chemical Laboratory</li>
-                        <li class="list-group-item">Metrology Laboratory</li>
-                        <li class="list-group-item">Physical Laboratory</li>
-                        <li class="list-group-item">Formula of Manufacture</li>
-                        <li class="list-group-item">Shelf Life Testing</li>
-                        <li class="list-group-item">Proficiency Testing Program</li>
-                        <li class="list-group-item">Reference Material Provision</li>
-                    </ul>
-                </ol>
-                </p>
-                <img src="/images/services.png" alt="" width="600" height="280"/>
-            </div>
-            <div style="height: 30px"></div>
-        </div>
-    </div>  
+
+
+<div class="body-content" style="background-color: #ecf0f5">
+<div class="container">
+    <br>
+    <div class="row" style="padding-bottom: 30px">
+        
+        <div style="margin-bottom: 1%;margin-left: 1%;height:30px;background-image:linear-gradient(40deg, #3c8dbc  20%,transparent 5%);border-bottom: #3c8dbc medium solid;">
+                                    <p style='color:white;font-size:1.5rem;font-weight: bold;padding-top:.5%;padding-left: 1%'>How to avail our services</p>
+                                    <div class="row">
+                                        
+                                        <div class="col-sm-6">
+                                            <h4>How To</h4>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/d4PJxtE-coc "></iframe>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <!-- 16:9 -->
+                                            <h4>Referral System</h4>
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/39XaMaAq5JI"></iframe>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+    </div>
+    
+    <div class="row" style="padding-bottom: 30px">
+        <br>
+        <div style="margin-bottom: 1%;margin-left: 1%;height:30px;background-image:linear-gradient(40deg, #3c8dbc  20%,transparent 5%);border-bottom: #3c8dbc medium solid;">
+                                    <p style='color:white;font-size:1.5rem;font-weight: bold;padding-top:.5%;padding-left: 1%'>Our Services</p>
+                                    <div class="row">
+                                    <div class="col-md-12">
+                                    &nbsp&nbsp&nbspOneLab has network of laboratories that conducts various tests in areas such as <strong> Chemical, Micorbiology,Food, Cosmetics, Metals, Adhesives,
+                                    Pesticides, Furnitures, Cement, Contruction,Dried Raw Seaweeds,Halal, Alkaloids, Plastic, Tiles, Fertilizer, Paints, Plants, Rubber, Wood, Water
+                                    Marine Products, Shelf Life, Electrical, Dairy, Wastewatrer, Calibration, Textile and Fabrics and more.</strong>
+                                    <br>
+                                    &nbsp&nbsp&nbspOneLab services are offered by both local and international laboratories from Vietnam, Malaysia, Thailand, United Arab Emirates and Australia.
+                                    As the network expands, more services shall be added.
+                                    </div>
+                                    </div>
+
+                                </div>
+    </div>
+    
+    
+</div>
 </div>

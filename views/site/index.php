@@ -168,8 +168,6 @@ $this->registerJs($script, View::POS_END);
                 </div>
             </div>
         </section>
-        <section id="newsFeedSection">     
-            <?= $this->render('..\portal\newsfeed.php') ?>
-        </section>
+       
     </div>
 </div>

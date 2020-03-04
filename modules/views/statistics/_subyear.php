@@ -473,7 +473,7 @@ use kartik\helpers\Html;
                                                      'style'=>[
                                                         'color'=>'#066da9',
                                                         'font-weight'=>'bold',
-                                                        'font-size'=> 15
+                                                        'font-size'=> 11
                                                     ],
                                                     // 'rotation'=> 45,
                                                 ],
@@ -503,7 +503,16 @@ use kartik\helpers\Html;
                                                 ]
                                             ],
                                             'plotOptions' => [
-                                                'series'=>[ 'pointPadding'=>0, 'groupPadding'=>0,'pointWidth'=>50],
+                                                'series'=>[ 'pointPadding'=>0, 
+                                                            'groupPadding'=>0,
+                                                            'pointWidth'=>50,
+                                                            //'cursor'=>'pointer',
+                                                           // 'point'=>
+                                                            //          'events'=>[
+                                                            //                    'click'=>new \yii\web\JsExpression("function(e){ alert('test'); }")
+                                                            //                   ],   
+                                                            //        ],
+                                                          ],
                                                 'column' => [
                                                     'dataLabels' => [
                                                         'enabled' => true,
